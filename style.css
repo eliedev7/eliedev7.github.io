@@ -1,3 +1,6 @@
+/******************************************************
+    *** Style de base pour la structure du jeu
+******************************************************/
 body {
     background: linear-gradient(rgb(212, 23, 23), rgb(191, 223, 31));
     background-size: cover;
@@ -7,12 +10,6 @@ body {
     position: relative;
     height: 100vh;
     color: #555;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
 }
 
 .clearfix::after {
@@ -25,11 +22,11 @@ body {
 .wrapper {
     width: 78%;
     height: 94%;
-    position: absolute;
+    position: relative;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #fff;
+    background-color: rgb(255, 255, 255);
     box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.3);
     overflow: hidden;
 }
@@ -38,9 +35,10 @@ body {
 .player-1-panel {
     width: 50%;
     float: left;
-    height: 600px;
+    height: 550px;
     padding: 100px;
 }
+
 
 /**********************************************
   *** PLAYERS
@@ -59,14 +57,14 @@ body {
 
 .player-score {
     text-align: center;
-    font-size: 80px;
+    font-size: 70px;
     font-weight: 100;
     color: #eb4d4d;
     margin-bottom: 130px;
 }
 
 .active {
-    background-color: #f4ef8f9a;
+    background-color: #f4ef8faa;
 }
 
 .active .player-name {
@@ -94,7 +92,7 @@ body {
 .player-current-label {
     text-transform: uppercase;
     margin-bottom: 10px;
-    font-size: 12px;
+    font-size: 20px;
     color: #222;
 }
 
@@ -120,7 +118,7 @@ button {
 
 button:hover {
     font-weight: 600;
-    background-color: rgb(223, 255, 127);
+    background-color: rgb(202, 245, 75);
 }
 
 button:hover i {
@@ -165,9 +163,10 @@ i {
 
 .winner {
     background-color: #f7f7f7;
+    background-image: url("https://media.giphy.com/media/fVywASvsk3khvaC1tE/giphy.gif");
 }
 
 .winner .player-name {
-    font-weight: 300;
+    font-weight: 350;
     color: #eb4d4d;
 }
