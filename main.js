@@ -64,10 +64,50 @@ document.querySelector("#take-a-turn").addEventListener("click", function () {
 
             gaming = false;
         } else {
-            // Next player
+
             nextPlayer();
         }
     }
 });
+
+
+// fonction pour passer le tour
+function nextPlayer() {
+    roundScore = 0;
+    activePlayer === 0 ? (activePlayer = 1) : (activePlayer = 0);
+
+    document.getElementById("round-0").textContent = 0;
+    document.getElementById("round-1").textContent = 0;
+    document.querySelector(".player-0-panel").classList.toggle("active");
+    document.querySelector(".player-1-panel").classList.toggle("active");
+    document.querySelector(".dice").style.display = "none";
+}
+
+// Fonction pour initialiser le jeu
+document.querySelector(".btn-new").addEventListener("click", init);
+
+function init() {
+    // Reseting score vars
+    scores = [0, 0];
+    roundScore = 0;
+    activePlayer = 0;
+    gaming = true;
+
+    document.querySelector(".dice").style.display = "none";
+    // Reseting allscores
+    document.getElementById("score-0").textContent = "0";
+    document.getElementById("score-1").textContent = "0";
+    document.getElementById("round-0").textContent = "0";
+    document.getElementById("round-1").textContent = "0";
+    // Reseting Player Names
+    document.getElementById("name-0").textContent = "Player 1";
+    document.getElementById("name-1").textContent = "Player 2";
+    // Removing classes from panels
+    document.querySelector(".player-0-panel").classList.remove("winner");
+    document.querySelector(".player-1-panel").classList.remove("winner");
+    document.querySelector(".player-0-panel").classList.remove("active");
+    document.querySelector(".player-1-panel").classList.remove("active");
+    document.querySelector(".player-0-panel").classList.add("active");
+}
 
 
